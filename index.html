@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <title>Banco de Tiempo</title>
+
+  <!-- CSS -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+  <!-- Scripts -->
+  <script defer src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script defer src="js/materialize.min.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/index.js"></script>
+</head>
+
+<body>
+
+  <a class="anchor" id="home" aria-hidden="true"></a>
+  <nav class="red" role="navigation">
+    <div class="nav-wrapper">
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#home" tabindex="0">Inicio</a></li>
+        <li><a href="#description" tabindex="0">¿Que es un banco de tiempo?</a></li>
+        <li><a href="#features" tabindex="0">Caracteristicas</a></li>
+        <li><a href="#testimonies" tabindex="0">Testimonios</a></li>
+        <li><a href="#about-us" tabindex="0">Sobre nosotros</a></li>
+        <li><a href="#join-us" tabindex="0">Unete</a></li>
+        <li><a href="/login" tabindex="0"><i class="material-icons left">account_circle</i>Inicia sesión</a></li>
+      </ul>
+    </div>
+  </nav>
+  <ul id="nav-mobile" class="sidenav">
+    <li><a href="#home">Inicio</a></li>
+    <li><a href="#description">¿Que es un banco de tiempo?</a></li>
+    <li><a href="#features">Caracteristicas</a></li>
+    <li><a href="#testimonies">Testimonios</a></li>
+    <li><a href="#about-us">Sobre nosotros</a></li>
+    <li><a href="#join-us">Unete</a></li>
+    <li><a href="/login"><i class="material-icons left">account_circle</i>Inicia sesión</a></li>
+  </ul>
+
+  <main>
+    <div id="index-banner" class="parallax-container">
+      <section class="section no-pad-bot">
+        <div class="container">
+
+          <img class="header" src="images/logo.png" alt="">
+          <div class="row center">
+            <h5 class="sub-header col s12 white-text">Sacale provecho a tu tiempo uniendote al Banco de
+              Tiempo!</h5>
+          </div>
+
+          <div class="row center">
+            <a href="#join-us" class="btn-large waves-effect waves-light red">Registrate</a>
+          </div>
+
+        </div>
+      </section>
+      <div class="parallax blur"><img src="images/background-header.jpg" alt="header background image"></div>
+    </div>
+
+    <div class="container">
+      <a class="anchor" id="description" aria-hidden="true"></a>
+      <section class="section">
+        <div class="row">
+          <div class="col s12 center">
+            <h4>¿Que es un Banco de Tiempo?</h4>
+            <p class="light">Un <em>Banco de Tiempo</em> es una herramienta con la cual un grupo de personas
+              puede crear
+              una alternativa
+              económica social, en ella se intercambian habilidades entre los miembros sin utilizar dinero, únicamente
+              se
+              contabilizan las horas de servicio prestado y recibido.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="parallax-container valign-wrapper">
+      <div class="parallax"><img src="images/background1.jpg" alt=""></div>
+    </div>
+
+    <div class="container">
+      <a class="anchor" id="features" aria-hidden="true"></a>
+      <section class="section" aria-label="Caracteristicas">
+        <div class="row">
+
+          <div class="col s12 m6">
+            <div class="icon-block">
+              <h2 class="center red-text" aria-hidden="true"><i class="large material-icons">forum</i></h2>
+              <h5 class="center">Comunidades públicas</h5>
+              <p class="center light">Unete a comunidades locales donde publicar y aceptar favores</p>
+            </div>
+          </div>
+
+          <div class="col s12 m6">
+            <div class="icon-block">
+              <h2 class="center red-text" aria-hidden="true"><i class="large material-icons">group</i></h2>
+              <h5 class="center">Comunidades de confianza</h5>
+              <p class="center light">Crea o unete a comunidades privadas donde podrás realizar favores que
+                requieran de
+                un cierto grado de confianza</p>
+            </div>
+          </div>
+
+          <div class="col s12 m6">
+            <div class="icon-block">
+              <h2 class="center red-text" aria-hidden="true"><i class="large material-icons">access_time</i></h2>
+              <h5 class="center">Balance de tiempo</h5>
+              <p class="center light">Gestiona facilmente el tiempo que le has dedicado a la comunidad</p>
+            </div>
+          </div>
+
+          <div class="col s12 m6">
+            <div class="icon-block">
+              <h2 class="center red-text" aria-hidden="true"><i class="large material-icons">rate_review</i></h2>
+              <h5 class="center">Valoraciones y confianza</h5>
+              <p class="center light">Valora a otros usuarios para aumentar su reputación y ayudar a la
+                comunidad</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <div class="parallax-container valign-wrapper">
+      <div class="parallax"><img src="images/background2.jpg" alt=""></div>
+    </div>
+
+    <a class="anchor no-top" id="testimonies" aria-hidden="true"></a>
+    <section class="section">
+      <div class="row">
+        <div class="col s12 center">
+          <h3 class="section-header">Testimonios</h3>
+
+          <div id="testimonies-carousel" class="carousel carousel-slider center" aria-roledescription="carousel"
+            role="region" aria-live="polite" aria-label="carrousel con 3 testimonios">
+
+            <div class="carousel-item" href="#one!" aria-label="panel 1 de 3" aria-roledescription="slide" role="group">
+              <div class="row">
+                <div class="col s12 m6">
+                  <div>
+                    <img class="avatar-img" alt="foto de juan" src="images/avatar.png">
+                    <h3 aria-label="testimonio de Juan Garcia">Juan Garcia</h3>
+                    <h5>Profesor de natación</h5>
+                    <cite class="light">Suspendisse semper diam vel purus varius, in facilisis odio cursus.
+                      Pellentesque
+                      viverra euismod
+                      mi eget auctor. Nunc ac orci eleifend, ultrices nisl eu, auctor turpis. Nam iaculis in nisl non
+                      ullamcorper.</cite>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item" href="#two!" aria-label="panel 2 de 3" aria-roledescription="slide" role="group">
+              <div class="row">
+                <div class="col s12 m6">
+                  <div>
+                    <img class="avatar-img" alt="foto de paul" src="images/avatar.png">
+                    <h3 aria-label="testimonio de Paul Nielsen">Paul Nielsen</h3>
+                    <h5>Escritor</h5>
+                    <cite class="light">Suspendisse semper diam vel purus varius, in facilisis odio cursus.
+                      Pellentesque
+                      viverra euismod
+                      mi
+                      eget auctor. Nunc ac orci eleifend, ultrices nisl eu, auctor turpis. Nam iaculis in nisl non
+                      ullamcorper.</cite>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item" href="#three!" aria-label="panel 3 de 3" aria-roledescription="slide"
+              role="group">
+              <div class="row">
+                <div class="col s12 m6">
+                  <div>
+                    <img class="avatar-img" alt="foto de juan" src="images/avatar.png">
+                    <h3 aria-label="testimonio de Maria Fernandez">Maria Fernandez</h3>
+                    <h5>Abogada</h5>
+                    <cite class="light">Suspendisse semper diam vel purus varius, in facilisis odio cursus.
+                      Pellentesque
+                      viverra euismod
+                      mi
+                      eget auctor. Nunc ac orci eleifend, ultrices nisl eu, auctor turpis. Nam iaculis in nisl non
+                      ullamcorper.</cite>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-buttons carousel-fixed-item center">
+              <button class="btn red waves-effect prev" aria-controls="testimonies-carousel"
+                aria-label="diapositiva anterior"><i class="material-icons left">keyboard_arrow_left</i>Anterior</button>
+              <button class="btn red waves-effect next" aria-controls="testimonies-carousel"
+                aria-label="diapositiva siguiente"><i class="material-icons right">keyboard_arrow_right</i>Siguiente</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="parallax-container valign-wrapper">
+      <div class="parallax"><img src="images/background3.jpg" alt=""></div>
+    </div>
+
+    <div class="container">
+      <a class="anchor" id="about-us" aria-hidden="true"></a>
+      <section class="section">
+        <div class="row">
+          <div class="col s12 center">
+            <h3 class="section-header">Sobre nosotros</h3>
+            <p class="light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed condimentum
+              mi. Cras vel
+              tristique nibh.
+              Suspendisse
+              non felis ut tortor condimentum elementum. Suspendisse suscipit nulla sapien, nec hendrerit sem maximus
+              at.
+              Suspendisse
+              semper diam vel purus varius, in facilisis odio cursus. Pellentesque viverra euismod mi eget auctor. Nunc
+              ac
+              orci eleifend,
+              ultrices nisl eu, auctor turpis. Nam iaculis in nisl non ullamcorper. Aenean eu urna faucibus, dictum
+              sapien
+              eu, fermentum risus.</p>
+
+            <p class="light">Maecenas quis molestie dui. Phasellus semper odio quis sem viverra, eu rutrum
+              felis
+              consequat. Sed nec
+              consequat lacus,
+              vitae lacinia leo. Vivamus neque risus, ultricies sed auctor id, tristique scelerisque metus. Aliquam
+              volutpat dignissim faucibus.
+              Fusce ornare urna sit amet risus interdum ullamcorper. In hendrerit, massa eget finibus tempus, diam nibh
+              ultrices sapien, vitae
+              facilisis magna nibh tristique metus. Quisque sit amet libero dictum, molestie massa ac, pellentesque
+              odio.
+              Fusce non elit non est
+              commodo faucibus. Aenean congue ipsum sit amet semper pulvinar. Mauris venenatis, ligula vel rhoncus
+              dignissim, quam erat varius dolor,
+              ut scelerisque mi erat quis felis. Ut ac lacinia eros. Etiam accumsan augue ex, et venenatis massa
+              efficitur
+              semper. Nulla tempus auctor
+              porta. Integer a consectetur ante. Curabitur in bibendum turpis. </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="container join-us-container">
+      <a class="anchor" id="join-us" aria-hidden="true"></a>
+      <section class="section red white-text card">
+        <div class="row card-content">
+          <div class="col s12 center">
+            <h3 class="mb-50 mt-10" aria-label="formulario de inscripción">Unete</h3>
+          </div>
+
+          <form id="join-form" class="col s12">
+            <div class="row center">
+              <div class="col s12">
+                <div class="feedback mb-30" role="alert" aria-atomic="true" aria-hidden="true"></div>
+              </div>
+
+              <div class="input-field col s12 xl6">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="name" type="text" class="white-text" tabindex="0" aria-required="true">
+                <label for="name">Nombre y apellidos</label>
+              </div>
+
+              <div class="input-field col s12 xl6">
+                <i class="material-icons prefix">email</i>
+                <input id="email" type="email" class="white-text" tabindex="0" aria-required="true">
+                <label for="email">Correo electrónico</label>
+              </div>
+
+              <div class="input-field col s12 m6">
+                <i class="material-icons prefix">lock</i>
+                <input id="password" type="password" class="white-text" tabindex="0" aria-required="true">
+                <label for="password">Contraseña</label>
+              </div>
+
+              <div class="input-field col s12 m6">
+                <i class="material-icons prefix">lock</i>
+                <input id="repeat_password" type="password" class="white-text" tabindex="0" aria-required="true">
+                <label for="repeat_password">Confirmar contraseña</label>
+              </div>
+
+              <div class="col s12">
+                <label for="terms">
+                  <input type="checkbox" class="white" tabindex="0" id="terms" aria-required="true" />
+                  <span>Acepto los términos y condiciones de uso</span>
+                </label>
+              </div>
+
+              <div class="col s12 mt-50">
+                <div id="submit">
+                  <input class="btn black-text" type="submit" value="Registrarse" tabindex="0" aria-live />
+                  <span class="white-text">o</span>
+                  <a href="/login" class="login-link">Iniciar sesión</a>
+                </div>
+                <div class="spinner preloader-wrapper active hidden">
+                  <div class="spinner-layer spinner-yellow-only">
+                    <div class="circle-clipper left">
+                      <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                      <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                      <div class="circle"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="page-footer red">
+    <div class="container">
+      <div class="row center">
+
+        <div class="col l4 s12">
+          <h5 class="white-text" aria-label="siguenos en nuestras redes sociales">Siguenos en</h5>
+          <ul>
+            <li><a class="social-img" href="https://twitter.com" tabindex="0"
+                aria-label="nuestro perfil de Twitter"><img alt="twitter" src="images/twitter.png">Twitter</a>
+            </li>
+            <li><a class="social-img" href="https://instagram.com" tabindex="0"
+                aria-label="nuestro perfil de Instagram"><img alt="instagram" src="images/instagram.png">Instagram</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col l4 s12">
+          <h5 class="white-text">Enlaces de interés</h5>
+          <ul>
+            <li><a class="white-text" href="#!" tabindex="0">¿Quiénes somos?</a></li>
+            <li><a class="white-text" href="#!" tabindex="0">Tutorial</a></li>
+            <li><a class="white-text" href="#!" tabindex="0" aria-label="Preguntas realizadas frecuentemente"><abbr
+                  title="Preguntas realizadas frecuentemente">FAQ</abbr></a></li>
+            <li><a class="white-text" href="#!" tabindex="0">Mapa del sitio</a></li>
+            <li><a class="white-text" href="#!" tabindex="0">Estadisticas</a></li>
+          </ul>
+        </div>
+
+        <div class="col l4 s12">
+          <h5 class="white-text">Aspectos legales</h5>
+          <ul>
+            <li><a class="white-text" href="#!" tabindex="0" aria-label="Ley General de Protección de Datos"><abbr
+                  title="Ley General de Protección de Datos">LGPD</abbr></a></li>
+            <li><a class="white-text" href="#!" tabindex="0">Condiciones de uso</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        Hecho usando <a class="red-text text-lighten-3" href="http://materializecss.com" tabindex="0">Materialize</a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <title>Banco de Tiempo: Dashboard</title>
+
+  <!-- CSS -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+  <!-- Scripts -->
+  <script defer src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script defer src="js/materialize.min.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/dashboard.js"></script>
+</head>
+
+<body>
+
+  <nav class="red" role="navigation">
+    <div class="nav-wrapper">
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#" onclick="logout()" tabindex="0"><i class="material-icons left">exit_to_app</i>Cerrar sesión</a></li>
+      </ul>
+    </div>
+  </nav>
+  <ul id="nav-mobile" class="sidenav">
+    <li><a href="#" onclick="logout()"><i class="material-icons left">exit_to_app</i>Cerrar sesión</a></li>
+  </ul>
+
+  <main>
+    TODO
+  </main>
+
+  <footer class="page-footer red">
+    <div class="container">
+      <div class="row center">
+
+        <div class="col l4 s12">
+          <h5 class="white-text" aria-label="siguenos en nuestras redes sociales">Siguenos en</h5>
+          <ul>
+            <li><a class="social-img" href="https://twitter.com" tabindex="0"
+                aria-label="nuestro perfil de Twitter"><img alt="twitter" src="images/twitter.png">Twitter</a>
+            </li>
+            <li><a class="social-img" href="https://instagram.com" tabindex="0"
+                aria-label="nuestro perfil de Instagram"><img alt="instagram" src="images/instagram.png">Instagram</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col l4 s12">
+          <h5 class="white-text">Enlaces de interés</h5>
+          <ul>
+            <li><a class="white-text" href="#!" tabindex="0">¿Quiénes somos?</a></li>
+            <li><a class="white-text" href="#!" tabindex="0">Tutorial</a></li>
+            <li><a class="white-text" href="#!" tabindex="0" aria-label="Preguntas realizadas frecuentemente"><abbr
+                  title="Preguntas realizadas frecuentemente">FAQ</abbr></a></li>
+            <li><a class="white-text" href="#!" tabindex="0">Mapa del sitio</a></li>
+            <li><a class="white-text" href="#!" tabindex="0">Estadisticas</a></li>
+          </ul>
+        </div>
+
+        <div class="col l4 s12">
+          <h5 class="white-text">Aspectos legales</h5>
+          <ul>
+            <li><a class="white-text" href="#!" tabindex="0" aria-label="Ley General de Protección de Datos"><abbr
+                  title="Ley General de Protección de Datos">LGPD</abbr></a></li>
+            <li><a class="white-text" href="#!" tabindex="0">Condiciones de uso</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        Hecho usando <a class="red-text text-lighten-3" href="http://materializecss.com" tabindex="0">Materialize</a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
