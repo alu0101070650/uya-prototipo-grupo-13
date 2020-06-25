@@ -58,7 +58,11 @@ $("#join-form").submit((event) => {
         });
       })
       .then(() => {
-        window.location.href = "/dashboard";
+        if (window.location.pathname.startsWith("/uya-prototipo-grupo-13")) {
+          window.location.href = "/uya-prototipo-grupo-13/dashboard";
+        } else {
+          window.location.href = "/dashboard";
+        }
       })
       .catch((error) => {
         let errorCode = error.code;
