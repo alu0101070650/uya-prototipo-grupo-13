@@ -1,6 +1,10 @@
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-    window.location.href = "/dashboard";
+    if (window.location.pathname.startsWith("/uya-prototipo-grupo-13")) {
+      window.location.href = "/uya-prototipo-grupo-13/dashboard";
+    } else {
+      window.location.href = "/dashboard";
+    }
   }
 });
 
