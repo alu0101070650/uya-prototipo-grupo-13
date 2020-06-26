@@ -8,6 +8,14 @@ firebase.auth().onAuthStateChanged((user) => {
   }
 });
 
+function goToMainPage() {
+  if (window.location.pathname.startsWith("/uya-prototipo-grupo-13")) {
+    window.location.href = "/uya-prototipo-grupo-13";
+  } else {
+    window.location.href = "/";
+  }
+}
+
 // Login form
 $("#login-form").submit((event) => {
   const feedbackContainer = $("#login-form .feedback");
