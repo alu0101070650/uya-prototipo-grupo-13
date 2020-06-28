@@ -141,3 +141,11 @@ function goToTrustGroups() {
     window.location.href = "/trust_groups";
   }
 }
+
+function goToProfile() {
+  if (window.location.pathname.startsWith("/uya-prototipo-grupo-13")) {
+    window.location.href = "/uya-prototipo-grupo-13/profile";
+  } else {
+    window.location.href = "/profile";
+  }
+}

@@ -1,0 +1,45 @@
+.profile-header {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 50px;
+}
+
+.profile-header h1 {
+  display: inline-block;
+  font-size: 4em;
+  flex-grow: 1;
+  margin: 0;
+}
+
+.profile-header-hr {
+  margin-bottom: 25px;
+}
+
+.profile-image {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+.profile-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.profile-name {
+  display: flex;
+  justify-content: center;
+  font-size: 2.2em;
+}
+
+.profile-name p {
+  margin: 0;
+}
+
+.profile-loading {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
