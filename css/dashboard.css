@@ -1,0 +1,53 @@
+.advrt-header {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 50px;
+}
+
+.advrt-header h1 {
+  display: inline-block;
+  font-size: 4em;
+  flex-grow: 1;
+  margin: 0;
+}
+
+.advrt-header-hr {
+  margin-bottom: 25px;
+}
+
+.advrt-list-loading {
+  display: flex;
+  justify-content: center;
+}
+
+.advrt-user-info {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.advrt-user-info-avatar {
+  height: 60px;
+  width: 60px;
+  margin-right: 15px;
+  border-radius: 50%;
+}
+
+.advrt-user-info-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.advrt-user-info-data span:nth-child(2) {
+  color: gray;
+}
+
+.advrt-content {
+  display: flex;
+}
+
+.advrt-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
