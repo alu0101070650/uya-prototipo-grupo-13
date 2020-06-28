@@ -5,7 +5,9 @@ $("#join-form").submit((event) => {
   feedbackContainer.html("");
   feedbackContainer.attr("aria-hidden", "true");
 
+  let hasErrors = false;
   let hasFeedback = false;
+  
   const addFeedbackMessage = (message) => {
     feedbackContainer.append(`<p>${message}</p>`);
     hasFeedback = true;
@@ -26,22 +28,27 @@ $("#join-form").submit((event) => {
 
   if (name === "") {
     addFeedbackMessage("Por favor introduzca su nombre y apellidos.");
+    hasErrors = true;
   }
 
   if (email === "") {
     addFeedbackMessage("Por favor introduzca su email.");
+    hasErrors = true;
   }
 
   if (password === "") {
     addFeedbackMessage("Por favor introduzca su contraseña.");
+    hasErrors = true;
   }
 
   if (password !== repeatPassword) {
     addFeedbackMessage("Las contraseñas deben coincidir.");
+    hasErrors = true;
   }
 
   if (!termsAccepted) {
     addFeedbackMessage("Por favor acepta los términos y condiciones de uso.");
+    hasErrors = true;
   }
 
   if (hasFeedback) {
@@ -84,6 +91,14 @@ $("#join-form").submit((event) => {
         submitButton.removeClass("hidden");
         loadingSpinner.addClass("hidden");
       });
+
+      if (hasErrors) {
+        $("#errors").attr("aria-hidden", "false");
+        $("#errors").focus();
+        return false;
+      } else {
+          return true;
+      }
   }
 
   return false;

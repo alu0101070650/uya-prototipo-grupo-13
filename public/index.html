@@ -26,29 +26,33 @@
 <body>
 
   <a class="anchor" id="home" aria-hidden="true"></a>
-  <nav class="red" role="navigation">
-    <div class="nav-wrapper">
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#home" tabindex="0">Inicio</a></li>
-        <li><a href="#description" tabindex="0">¿Que es un banco de tiempo?</a></li>
-        <li><a href="#features" tabindex="0">Caracteristicas</a></li>
-        <li><a href="#testimonies" tabindex="0">Testimonios</a></li>
-        <li><a href="#about-us" tabindex="0">Sobre nosotros</a></li>
-        <li><a href="#join-us" tabindex="0">Unete</a></li>
-        <li><a href="login" tabindex="0"><i class="material-icons left">account_circle</i>Inicia sesión</a></li>
-      </ul>
-    </div>
-  </nav>
-  <ul id="nav-mobile" class="sidenav">
-    <li><a href="#home">Inicio</a></li>
-    <li><a href="#description">¿Que es un banco de tiempo?</a></li>
-    <li><a href="#features">Caracteristicas</a></li>
-    <li><a href="#testimonies">Testimonios</a></li>
-    <li><a href="#about-us">Sobre nosotros</a></li>
-    <li><a href="#join-us">Unete</a></li>
-    <li><a href="login"><i class="material-icons left">account_circle</i>Inicia sesión</a></li>
-  </ul>
+
+  <div class="navbar-fixed">
+    <nav class="red" role="navigation">
+      <div class="nav-wrapper container">
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#home" tabindex="0">Inicio</a></li>
+          <li><a href="#description" tabindex="0">¿Qué es un banco de tiempo?</a></li>
+          <li><a href="#features" tabindex="0">Características</a></li>
+          <li><a href="#testimonies" tabindex="0">Testimonios</a></li>
+          <li><a href="#about-us" tabindex="0">Sobre nosotros</a></li>
+          <li><a href="#join-us" tabindex="0">Únete</a></li>
+          <li><a href="login" tabindex="0"><i class="material-icons left" aria-hidden="true">account_circle</i>Inicia sesión</a></li>
+        </ul>
+      
+        <ul id="nav-mobile" class="sidenav" aria-hidden="true">
+          <li><a href="#home" tabindex="-1">Inicio</a></li>
+          <li><a href="#description" tabindex="-1">¿Qué es un banco de tiempo?</a></li>
+          <li><a href="#features" tabindex="-1">Características</a></li>
+          <li><a href="#testimonies" tabindex="-1">Testimonios</a></li>
+          <li><a href="#about-us" tabindex="-1">Sobre nosotros</a></li>
+          <li><a href="#join-us" tabindex="-1">Únete</a></li>
+          <li><a href="login" tabindex="-1"><i class="material-icons left">account_circle</i>Inicia sesión</a></li>
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger" aria-hidden="true"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+  </div>
 
   <main>
     <div id="index-banner" class="parallax-container">
@@ -57,12 +61,12 @@
 
           <img class="header" src="images/logo.png" alt="">
           <div class="row center">
-            <h5 class="sub-header col s12 white-text">Sacale provecho a tu tiempo uniendote al Banco de
+            <h5 class="sub-header col s12 white-text" tabindex="0">¡Sácale provecho a tu tiempo uniéndote al Banco de
               Tiempo!</h5>
           </div>
 
           <div class="row center">
-            <a href="#join-us" class="btn-large waves-effect waves-light red">Registrate</a>
+            <a href="#join-us" class="btn-large waves-effect waves-light red" tabindex="0">Registrate</a>
           </div>
 
         </div>
@@ -75,8 +79,8 @@
       <section class="section">
         <div class="row">
           <div class="col s12 center">
-            <h4>¿Que es un Banco de Tiempo?</h4>
-            <p class="light">Un <em>Banco de Tiempo</em> es una herramienta con la cual un grupo de personas
+            <h4 tabindex="0">¿Qué es un Banco de Tiempo?</h4>
+            <p class="light" tabindex="0">Un <em>Banco de Tiempo</em> es una herramienta con la cual un grupo de personas
               puede crear
               una alternativa
               económica social, en ella se intercambian habilidades entre los miembros sin utilizar dinero, únicamente
@@ -93,22 +97,22 @@
 
     <div class="container">
       <a class="anchor" id="features" aria-hidden="true"></a>
-      <section class="section" aria-label="Caracteristicas">
+      <section class="section" tabindex="0" aria-label="Caracteristicas">
         <div class="row">
 
           <div class="col s12 m6">
             <div class="icon-block">
               <h2 class="center red-text" aria-hidden="true"><i class="large material-icons">forum</i></h2>
-              <h5 class="center">Comunidades públicas</h5>
-              <p class="center light">Unete a comunidades locales donde publicar y aceptar favores</p>
+              <h5 class="center" tabindex="0">Comunidades públicas</h5>
+              <p class="center light" tabindex="0">Únete a comunidades locales donde publicar y aceptar favores</p>
             </div>
           </div>
 
           <div class="col s12 m6">
             <div class="icon-block">
               <h2 class="center red-text" aria-hidden="true"><i class="large material-icons">group</i></h2>
-              <h5 class="center">Comunidades de confianza</h5>
-              <p class="center light">Crea o unete a comunidades privadas donde podrás realizar favores que
+              <h5 class="center" tabindex="0">Comunidades de confianza</h5>
+              <p class="center light" tabindex="0">Crea o únete a comunidades privadas donde podrás realizar favores que
                 requieran de
                 un cierto grado de confianza</p>
             </div>
@@ -117,16 +121,16 @@
           <div class="col s12 m6">
             <div class="icon-block">
               <h2 class="center red-text" aria-hidden="true"><i class="large material-icons">access_time</i></h2>
-              <h5 class="center">Balance de tiempo</h5>
-              <p class="center light">Gestiona facilmente el tiempo que le has dedicado a la comunidad</p>
+              <h5 class="center" tabindex="0">Balance de tiempo</h5>
+              <p class="center light" tabindex="0">Gestiona fácilmente el tiempo que le has dedicado a la comunidad</p>
             </div>
           </div>
 
           <div class="col s12 m6">
             <div class="icon-block">
               <h2 class="center red-text" aria-hidden="true"><i class="large material-icons">rate_review</i></h2>
-              <h5 class="center">Valoraciones y confianza</h5>
-              <p class="center light">Valora a otros usuarios para aumentar su reputación y ayudar a la
+              <h5 class="center" tabindex="0">Valoraciones y confianza</h5>
+              <p class="center light" tabindex="0">Valora a otros usuarios para aumentar su reputación y ayudar a la
                 comunidad</p>
             </div>
           </div>
@@ -143,7 +147,7 @@
     <section class="section">
       <div class="row">
         <div class="col s12 center">
-          <h3 class="section-header">Testimonios</h3>
+          <h3 class="section-header" tabindex="0">Testimonios</h3>
 
           <div id="testimonies-carousel" class="carousel carousel-slider center" aria-roledescription="carousel"
             role="region" aria-live="polite" aria-label="carrousel con 3 testimonios">
@@ -153,13 +157,11 @@
                 <div class="col s12 m6">
                   <div>
                     <img class="avatar-img" alt="foto de juan" src="images/avatar.png">
-                    <h3 aria-label="testimonio de Juan Garcia">Juan Garcia</h3>
-                    <h5>Profesor de natación</h5>
-                    <cite class="light">Suspendisse semper diam vel purus varius, in facilisis odio cursus.
-                      Pellentesque
-                      viverra euismod
-                      mi eget auctor. Nunc ac orci eleifend, ultrices nisl eu, auctor turpis. Nam iaculis in nisl non
-                      ullamcorper.</cite>
+                    <h3 tabindex="0" aria-label="testimonio de Juan Garcia">Juan García</h3>
+                    <h5 tabindex="0">Profesor de natación</h5>
+                    <cite class="light" tabindex="0">Excelente comunidad, me ha salvado de algunos aprietos en el
+                      último momento. 
+                    </cite>
                   </div>
                 </div>
               </div>
@@ -170,14 +172,11 @@
                 <div class="col s12 m6">
                   <div>
                     <img class="avatar-img" alt="foto de paul" src="images/avatar.png">
-                    <h3 aria-label="testimonio de Paul Nielsen">Paul Nielsen</h3>
-                    <h5>Escritor</h5>
-                    <cite class="light">Suspendisse semper diam vel purus varius, in facilisis odio cursus.
-                      Pellentesque
-                      viverra euismod
-                      mi
-                      eget auctor. Nunc ac orci eleifend, ultrices nisl eu, auctor turpis. Nam iaculis in nisl non
-                      ullamcorper.</cite>
+                    <h3 aria-label="testimonio de Paul Nielsen" tabindex="0">Paul Nielsen</h3>
+                    <h5 tabindex="0">Escritor</h5>
+                    <cite class="light" tabindex="0">Sin duda el mejor Banco de Tiempo donde he estado
+                      inscrito.
+                    </cite>
                   </div>
                 </div>
               </div>
@@ -189,14 +188,9 @@
                 <div class="col s12 m6">
                   <div>
                     <img class="avatar-img" alt="foto de juan" src="images/avatar.png">
-                    <h3 aria-label="testimonio de Maria Fernandez">Maria Fernandez</h3>
-                    <h5>Abogada</h5>
-                    <cite class="light">Suspendisse semper diam vel purus varius, in facilisis odio cursus.
-                      Pellentesque
-                      viverra euismod
-                      mi
-                      eget auctor. Nunc ac orci eleifend, ultrices nisl eu, auctor turpis. Nam iaculis in nisl non
-                      ullamcorper.</cite>
+                    <h3 aria-label="testimonio de Maria Fernandez" tabindex="0">María Fernández</h3>
+                    <h5 tabindex="0">Abogada</h5>
+                    <cite class="light" tabindex="0"> Muy buen servicio siguiendo todas las normativas. </cite>
                   </div>
                 </div>
               </div>
@@ -223,38 +217,19 @@
       <section class="section">
         <div class="row">
           <div class="col s12 center">
-            <h3 class="section-header">Sobre nosotros</h3>
-            <p class="light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed condimentum
-              mi. Cras vel
-              tristique nibh.
-              Suspendisse
-              non felis ut tortor condimentum elementum. Suspendisse suscipit nulla sapien, nec hendrerit sem maximus
-              at.
-              Suspendisse
-              semper diam vel purus varius, in facilisis odio cursus. Pellentesque viverra euismod mi eget auctor. Nunc
-              ac
-              orci eleifend,
-              ultrices nisl eu, auctor turpis. Nam iaculis in nisl non ullamcorper. Aenean eu urna faucibus, dictum
-              sapien
-              eu, fermentum risus.</p>
+            <h3 class="section-header" tabindex="0">Sobre nosotros</h3>
+            <p class="light" tabindex="0">
+              Somos un grupo de estudiantes de informática que iniciamos este proyecto tras haberlo planteado
+              un día en clase. Nuestro objetivo era crear una comunidad entre los estudiantes de la universidad para 
+              facilitarnos la vida en labores cotidianas, como por ejemplo, compartir coche algún fin de semana o 
+              incluso para recibir algunas clases particulares. 
+            </p>
 
-            <p class="light">Maecenas quis molestie dui. Phasellus semper odio quis sem viverra, eu rutrum
-              felis
-              consequat. Sed nec
-              consequat lacus,
-              vitae lacinia leo. Vivamus neque risus, ultricies sed auctor id, tristique scelerisque metus. Aliquam
-              volutpat dignissim faucibus.
-              Fusce ornare urna sit amet risus interdum ullamcorper. In hendrerit, massa eget finibus tempus, diam nibh
-              ultrices sapien, vitae
-              facilisis magna nibh tristique metus. Quisque sit amet libero dictum, molestie massa ac, pellentesque
-              odio.
-              Fusce non elit non est
-              commodo faucibus. Aenean congue ipsum sit amet semper pulvinar. Mauris venenatis, ligula vel rhoncus
-              dignissim, quam erat varius dolor,
-              ut scelerisque mi erat quis felis. Ut ac lacinia eros. Etiam accumsan augue ex, et venenatis massa
-              efficitur
-              semper. Nulla tempus auctor
-              porta. Integer a consectetur ante. Curabitur in bibendum turpis. </p>
+            <p class="light" tabindex="0">
+              Tras ver que la idea tenía buena aceptación decidimos hacer un banco de tiempo donde pudiese 
+              participar cualquiera. Así hemos ido adaptando nuestro Banco de Tiempo para que personas de todas 
+              partes de España puedan recibir y dar favores en sus entornos más cercanos.
+            </p>
           </div>
         </div>
       </section>
@@ -265,13 +240,13 @@
       <section class="section red white-text card">
         <div class="row card-content">
           <div class="col s12 center">
-            <h3 class="mb-50 mt-10" aria-label="formulario de inscripción">Unete</h3>
+            <h3 class="mb-50 mt-10" aria-label="formulario de inscripción" tabindex="0">Unete</h3>
           </div>
 
           <form id="join-form" class="col s12">
             <div class="row center">
               <div class="col s12">
-                <div class="feedback mb-30" role="alert" aria-atomic="true" aria-hidden="true"></div>
+                <div class="feedback mb-30" role="alert" aria-atomic="true" aria-hidden="true" tabindex="-1"></div>
               </div>
 
               <div class="input-field col s12 xl6">
@@ -300,7 +275,7 @@
 
               <div class="col s12">
                 <label for="terms">
-                  <input type="checkbox" class="white" tabindex="0" id="terms" aria-required="true" />
+                  <input type="checkbox" class="white" tabindex="0" id="terms" aria-required="true"  tabindex="0"/>
                   <span>Acepto los términos y condiciones de uso</span>
                 </label>
               </div>
@@ -338,7 +313,7 @@
       <div class="row center">
 
         <div class="col l4 s12">
-          <h5 class="white-text" aria-label="siguenos en nuestras redes sociales">Siguenos en</h5>
+          <h5 class="white-text" aria-label="siguenos en nuestras redes sociales" tabindex="0">Siguenos en</h5>
           <ul>
             <li><a class="social-img" href="https://twitter.com" tabindex="0"
                 aria-label="nuestro perfil de Twitter"><img alt="twitter" src="images/twitter.png">Twitter</a>
@@ -350,19 +325,19 @@
         </div>
 
         <div class="col l4 s12">
-          <h5 class="white-text">Enlaces de interés</h5>
+          <h5 class="white-text" tabindex="0">Enlaces de interés</h5>
           <ul>
             <li><a class="white-text" href="#!" tabindex="0">¿Quiénes somos?</a></li>
             <li><a class="white-text" href="#!" tabindex="0">Tutorial</a></li>
-            <li><a class="white-text" href="#!" tabindex="0" aria-label="Preguntas realizadas frecuentemente"><abbr
-                  title="Preguntas realizadas frecuentemente">FAQ</abbr></a></li>
+            <li><a class="white-text" href="#!" tabindex="0" aria-label="Preguntas frecuentes"><abbr
+                  title="Preguntas frecuentes">FAQ</abbr></a></li>
             <li><a class="white-text" href="#!" tabindex="0">Mapa del sitio</a></li>
             <li><a class="white-text" href="#!" tabindex="0">Estadisticas</a></li>
           </ul>
         </div>
 
         <div class="col l4 s12">
-          <h5 class="white-text">Aspectos legales</h5>
+          <h5 class="white-text" tabindex="0">Aspectos legales</h5>
           <ul>
             <li><a class="white-text" href="#!" tabindex="0" aria-label="Ley General de Protección de Datos"><abbr
                   title="Ley General de Protección de Datos">LGPD</abbr></a></li>
