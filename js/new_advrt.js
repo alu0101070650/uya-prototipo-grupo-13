@@ -1,6 +1,12 @@
 const db = firebase.firestore();
 
-$(document).ready(function () {
+firebase.auth().onAuthStateChanged((user) => {
+  if (!user) {
+    goToMainPage();
+  }
+});
+
+$(document).ready(() => {
   $("input#input_text, textarea#content").characterCounter();
 });
 
@@ -22,12 +28,17 @@ $("#new-advrt").submit((event) => {
     feedbackContainer.focus();
   };
 
-  const content = $("#new-advrt #content").val();
+  const content = $("#new-advrt #content");
+  const city = $("#new-advrt #city");
   const submitButton = $("#new-advrt #submit");
   const loadingSpinner = $("#new-advrt .spinner");
 
-  if (content === "") {
+  if (content.val() === "") {
     addFeedbackMessage("Por favor escriba el contenido del anuncio.");
+  }
+
+  if (city.val() === "") {
+    addFeedbackMessage("Por favor seleccione una zona geográfica.");
   }
 
   if (hasFeedback) {
@@ -37,18 +48,21 @@ $("#new-advrt").submit((event) => {
     loadingSpinner.removeClass("hidden");
     db.collection("adverts")
       .add({
-        content: content,
+        content: content.val(),
         creationDate: new Date(),
         userEmail: firebase.auth().currentUser.email,
         userId: firebase.auth().currentUser.uid,
         userName: firebase.auth().currentUser.displayName,
+        acceptedBy: "",
+        city: city.val(),
       })
       .then(() => {
-        if (window.location.pathname.startsWith("/uya-prototipo-grupo-13")) {
-          window.location.href = "/uya-prototipo-grupo-13/dashboard";
-        } else {
-          window.location.href = "/dashboard";
-        }
+        M.toast({
+          html:
+            '<span role="alert" aria-atomic="true" aria-hidden="true">Anuncio creado y publicado correctamente en el tablón de anuncios</span>',
+          displayLength: 6000,
+        });
+        content.val("");
       })
       .catch((error) => {
         let errorCode = error.code;

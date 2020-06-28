@@ -6,45 +6,28 @@ firebase.auth().onAuthStateChanged((user) => {
   }
 });
 
-function deleteAdvert(advertId) {
+function cancelFavor(advertId) {
   const feedbackLoading = $(".feedback-loading");
   feedbackLoading.removeClass("hidden");
 
   db.collection("adverts")
     .doc(advertId)
-    .delete()
+    .update({ acceptedBy: "" })
     .then(() => {
       M.toast({
         html:
-          '<span role="alert" aria-atomic="true" aria-hidden="true">Anuncio eliminado correctamente</span>',
+          '<span role="alert" aria-atomic="true" aria-hidden="true">Favor cancelado correctamente</span>',
         displayLength: 6000,
       });
       feedbackLoading.addClass("hidden");
     });
 }
 
-function acceptAdvert(advertId) {
-  const feedbackLoading = $(".feedback-loading");
-  feedbackLoading.removeClass("hidden");
-
-  db.collection("adverts")
-    .doc(advertId)
-    .update({ acceptedBy: firebase.auth().currentUser.uid })
-    .then(() => {
-      M.toast({
-        html:
-          '<span role="alert" aria-atomic="true" aria-hidden="true">Favor aceptado correctamente</span>',
-        displayLength: 6000,
-      });
-      feedbackLoading.addClass("hidden");
-    });
-}
-
-const container = $(".advrt-list");
+const container = $(".accepted-favors-list");
 db.collection("adverts").onSnapshot((querySnapshot) => {
   container.html("");
   querySnapshot.forEach((doc) => {
-    if (!doc.data().acceptedBy || doc.data().acceptedBy === "") {
+    if (doc.data().acceptedBy === firebase.auth().currentUser.uid) {
       const advert = renderAdvert(
         {
           userEmail: doc.data().userEmail,
@@ -63,6 +46,8 @@ db.collection("adverts").onSnapshot((querySnapshot) => {
   });
 
   if (container.html() === "") {
-    container.html("Actualmente no hay ningún anuncio publicado en el tablón.");
+    container.html(
+      "Actualmente no tienes ningún favor pendiente, puedes ver los favores anunciados en el tablón de anuncios."
+    );
   }
 });

@@ -1,21 +1,21 @@
-.advrt-header {
+.accepted-favors-header {
   display: flex;
   align-items: flex-end;
   margin-top: 50px;
 }
 
-.advrt-header h1 {
+.accepted-favors-header h1 {
   display: inline-block;
   font-size: 4em;
   flex-grow: 1;
   margin: 0;
 }
 
-.advrt-header-hr {
+.accepted-favors-header-hr {
   margin-bottom: 25px;
 }
 
-.advrt-list-loading {
+.accepted-favors-list-loading {
   display: flex;
   justify-content: center;
 }

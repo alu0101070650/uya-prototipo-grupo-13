@@ -6,6 +6,7 @@ $("#join-form").submit((event) => {
   feedbackContainer.attr("aria-hidden", "true");
 
   let hasFeedback = false;
+
   const addFeedbackMessage = (message) => {
     feedbackContainer.append(`<p>${message}</p>`);
     hasFeedback = true;
@@ -58,11 +59,7 @@ $("#join-form").submit((event) => {
         });
       })
       .then(() => {
-        if (window.location.pathname.startsWith("/uya-prototipo-grupo-13")) {
-          window.location.href = "/uya-prototipo-grupo-13/dashboard";
-        } else {
-          window.location.href = "/dashboard";
-        }
+        goToDashboard();
       })
       .catch((error) => {
         let errorCode = error.code;

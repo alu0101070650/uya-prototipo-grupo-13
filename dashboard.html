@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
-  <title>Banco de Tiempo: Dashboard</title>
+  <title>Banco de Tiempo: Tablón de anuncios</title>
 
   <!-- CSS -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -31,12 +31,18 @@
     <div class="nav-wrapper">
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
+        <li class="active"><a href="#" tabindex="0">Tablón de anuncios</a></li>
+        <li><a href="#" onclick="goToAcceptedFavors()" tabindex="0">Favores aceptados</a></li>
+        <li><a href="#" onclick="goToTrustGroups()" tabindex="0">Grupos de confianza</a></li>
         <li><a href="#" onclick="logout()" tabindex="0"><i class="material-icons left">exit_to_app</i>Cerrar sesión</a>
         </li>
       </ul>
     </div>
   </nav>
   <ul id="nav-mobile" class="sidenav">
+    <li class="active"><a href="#" tabindex="0">Tablón de anuncios</a></li>
+    <li><a href="#" onclick="goToAcceptedFavors()" tabindex="0">Favores aceptados</a></li>
+    <li><a href="#" onclick="goToTrustGroups()" tabindex="0">Grupos de confianza</a></li>
     <li><a href="#" onclick="logout()"><i class="material-icons left">exit_to_app</i>Cerrar sesión</a></li>
   </ul>
 
@@ -45,10 +51,27 @@
 
       <div class="advrt-header">
         <h1>Tablón de Anuncios</h1>
-        <a href="new_advert" class="btn waves-effect waves-light red"><i class="material-icons left">add</i>Nuevo anuncio</a>
+        <a href="new_advert" class="btn waves-effect waves-light red"><i class="material-icons left">add</i>Nuevo
+          anuncio</a>
       </div>
 
       <hr class="advrt-header-hr red-text" />
+
+      <div class="feedback-loading hidden">
+        <div class="preloader-wrapper big active">
+          <div class="spinner-layer spinner-red-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+              <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div class="advrt-list">
         <div class="advrt-list-loading">
