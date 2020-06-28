@@ -6,10 +6,6 @@ firebase.auth().onAuthStateChanged((user) => {
   }
 });
 
-function logout() {
-  firebase.auth().signOut();
-}
-
 function deleteAdvert(advertId) {
   const feedbackLoading = $(".feedback-loading");
   feedbackLoading.removeClass("hidden");

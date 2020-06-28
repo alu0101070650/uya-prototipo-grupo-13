@@ -45,6 +45,10 @@ firebase.analytics();
 
 // Functions
 
+function logout() {
+  firebase.auth().signOut();
+}
+
 function getGravatarImage(email) {
   const lowercaseEmail = email.toLowerCase().trim();
   return `https://www.gravatar.com/avatar/${CryptoJS.MD5(lowercaseEmail)}`;

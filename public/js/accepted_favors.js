@@ -1,5 +1,11 @@
 const db = firebase.firestore();
 
+firebase.auth().onAuthStateChanged((user) => {
+  if (!user) {
+    goToMainPage();
+  }
+});
+
 function cancelFavor(advertId) {
   const feedbackLoading = $(".feedback-loading");
   feedbackLoading.removeClass("hidden");

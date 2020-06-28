@@ -1,5 +1,11 @@
 const db = firebase.firestore();
 
+firebase.auth().onAuthStateChanged((user) => {
+  if (!user) {
+    goToMainPage();
+  }
+});
+
 $(document).ready(() => {
   $("input#input_text, textarea#content").characterCounter();
 });
