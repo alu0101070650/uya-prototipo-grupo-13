@@ -3,35 +3,45 @@
   color: #000 !important;
 }
 
-.input-field textarea {
+.input-field textarea,
+.input-field input {
   border-bottom: 1px solid #000 !important;
 }
 
 /* label focus color */
-.input-field textarea:focus + label {
+.input-field textarea:focus + label,
+.input-field input:focus + label {
   color: #000 !important;
 }
 
 /* label underline focus color */
-.input-field textarea:focus {
+.input-field textarea:focus,
+.input-field input:focus {
   border-bottom: 1px solid #000 !important;
   box-shadow: 0 1px 0 0 #000 !important;
 }
 
 /* valid color */
-.input-field textarea.valid {
+.input-field textarea.valid,
+.input-field input.valid {
   border-bottom: 1px solid #000 !important;
   box-shadow: 0 1px 0 0 #000 !important;
 }
 
 /* invalid color */
-.input-field textarea.invalid {
+.input-field textarea.invalid,
+.input-field input.invalid {
   border-bottom: 1px solid #000 !important;
   box-shadow: 0 1px 0 0 #000 !important;
 }
 
 /* icon prefix focus color */
 .input-field .prefix.active {
+  color: #000 !important;
+}
+
+.dropdown-content li > a,
+.dropdown-content li > span {
   color: #000 !important;
 }
 

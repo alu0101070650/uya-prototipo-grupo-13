@@ -5,13 +5,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
-  <title>Banco de Tiempo: Nuevo anuncio</title>
+  <title>Banco de Tiempo: Favores aceptados</title>
 
   <!-- CSS -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <link href="css/new_advrt.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/accepted_favors.css" type="text/css" rel="stylesheet" media="screen,projection" />
 
   <!-- Scripts -->
   <script defer src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -20,8 +20,9 @@
   <script defer src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
   <script defer src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
   <script defer src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
   <script defer src="js/main.js"></script>
-  <script defer src="js/new_advrt.js"></script>
+  <script defer src="js/accepted_favors.js"></script>
 </head>
 
 <body>
@@ -31,7 +32,7 @@
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#" onclick="goToDashboard()" tabindex="0">Tablón de anuncios</a></li>
-        <li><a href="#" onclick="goToAcceptedFavors()" tabindex="0">Favores aceptados</a></li>
+        <li class="active"><a href="#" tabindex="0">Favores aceptados</a></li>
         <li><a href="#" onclick="goToTrustGroups()" tabindex="0">Grupos de confianza</a></li>
         <li><a href="#" onclick="logout()" tabindex="0"><i class="material-icons left">exit_to_app</i>Cerrar sesión</a>
         </li>
@@ -39,7 +40,7 @@
     </div>
   </nav>
   <ul id="nav-mobile" class="sidenav">
-    <li><a href="#" onclick="goToDashboard()" tabindex="0">Tablón de anuncios</a></li>
+    <li class="active"><a href="#" tabindex="0">Tablón de anuncios</a></li>
     <li><a href="#" onclick="goToAcceptedFavors()" tabindex="0">Favores aceptados</a></li>
     <li><a href="#" onclick="goToTrustGroups()" tabindex="0">Grupos de confianza</a></li>
     <li><a href="#" onclick="logout()"><i class="material-icons left">exit_to_app</i>Cerrar sesión</a></li>
@@ -48,65 +49,45 @@
   <main>
     <div class="container">
 
-      <div class="new-advrt-header">
-        <h1>Nuevo Anuncio</h1>
+      <div class="accepted-favors-header">
+        <h1>Favores aceptados</h1>
       </div>
 
-      <hr class="new-advrt-header-hr red-text" />
+      <hr class="accepted-favors-header-hr red-text" />
 
-      <section class="card">
-        <div class="row card-content">
+      <div class="feedback-loading hidden">
+        <div class="preloader-wrapper big active">
+          <div class="spinner-layer spinner-red-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+              <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-          <form id="new-advrt" class="col s12">
-            <div class="row center">
-              <div class="col s12">
-                <div class="feedback mb-30" role="alert" aria-atomic="true" aria-hidden="true"></div>
+      <div class="accepted-favors-list">
+        <div class="accepted-favors-list-loading">
+          <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-red-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
               </div>
-
-              <div class="input-field col s12">
-                <i class="material-icons prefix">mode_edit</i>
-                <textarea id="content" class="materialize-textarea" data-length="420"></textarea>
-                <label for="content">Contenido</label>
+              <div class="gap-patch">
+                <div class="circle"></div>
               </div>
-
-              <div class="input-field col s12">
-                <i class="material-icons prefix select-icon">place</i>
-                <select id="city" class="black-text">
-                  <option value="San Cristobal de La Laguna">San Cristobal de La Laguna</option>
-                  <option value="Santa Cruz de Tenerife">Santa Cruz de Tenerife</option>
-                  <option value="Las Palmas de Gran Canaria">Las Palmas de Gran Canaria</option>
-                  <option value="Madrid">Madrid</option>
-                  <option value="Zaragoza">Zaragoza</option>
-                  <option value="Barcelona">Barcelona</option>
-                </select>
-                <label for="city">Zona geográfica</label>
-              </div>
-
-              <div class="col s12 mt-50">
-                <div id="submit">
-                  <input class="btn black-text" type="submit" value="Crear anuncio" tabindex="0" aria-live />
-                </div>
-                <div class="spinner preloader-wrapper active hidden">
-                  <div class="spinner-layer spinner-red-only">
-                    <div class="circle-clipper left">
-                      <div class="circle"></div>
-                    </div>
-                    <div class="gap-patch">
-                      <div class="circle"></div>
-                    </div>
-                    <div class="circle-clipper right">
-                      <div class="circle"></div>
-                    </div>
-                  </div>
-                </div>
+              <div class="circle-clipper right">
+                <div class="circle"></div>
               </div>
             </div>
-          </form>
-
+          </div>
         </div>
-      </section>
-
-
+      </div>
     </div>
   </main>
 

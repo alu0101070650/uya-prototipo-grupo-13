@@ -35,7 +35,7 @@ main {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .avatar-img {
@@ -58,4 +58,47 @@ main {
   width: 30px;
   height: 30px;
   margin-right: 10px;
+}
+
+.advrt-user-info {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.advrt-user-info-avatar {
+  height: 65px;
+  width: 65px;
+  margin-right: 15px;
+  border-radius: 50%;
+}
+
+.advrt-user-info-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.advrt-user-info-data span:nth-child(3) {
+  color: gray;
+  font-size: 0.9em;
+}
+
+.advrt-content {
+  display: flex;
+}
+
+.advrt-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.feedback-loading {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.select-icon {
+  left: 10px;
 }
