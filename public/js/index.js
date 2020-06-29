@@ -1,3 +1,7 @@
+const db = firebase.firestore();
+
+$("input#input_text, textarea#description").characterCounter();
+
 // Join/register form
 $("#join-form").submit((event) => {
   const feedbackContainer = $("#join-form .feedback");
@@ -19,6 +23,7 @@ $("#join-form").submit((event) => {
 
   const name = $("#join-form #name").val();
   const email = $("#join-form #email").val();
+  const description = $("#join-form #description").val();
   const password = $("#join-form #password").val();
   const repeatPassword = $("#join-form #repeat_password").val();
   const termsAccepted = $("#join-form #terms").prop("checked");
@@ -26,15 +31,19 @@ $("#join-form").submit((event) => {
   const loadingSpinner = $("#join-form .spinner");
 
   if (name === "") {
-    addFeedbackMessage("Por favor introduzca su nombre y apellidos.");
+    addFeedbackMessage("Por favor, introduzca su nombre y apellidos.");
   }
 
   if (email === "") {
-    addFeedbackMessage("Por favor introduzca su email.");
+    addFeedbackMessage("Por favor, introduzca su email.");
+  }
+
+  if (description === "") {
+    addFeedbackMessage("Por favor, introduzca una breve descripción personal.");
   }
 
   if (password === "") {
-    addFeedbackMessage("Por favor introduzca su contraseña.");
+    addFeedbackMessage("Por favor, introduzca su contraseña.");
   }
 
   if (password !== repeatPassword) {
@@ -42,7 +51,7 @@ $("#join-form").submit((event) => {
   }
 
   if (!termsAccepted) {
-    addFeedbackMessage("Por favor acepta los términos y condiciones de uso.");
+    addFeedbackMessage("Por favor, acepta los términos y condiciones de uso.");
   }
 
   if (hasFeedback) {
@@ -56,6 +65,14 @@ $("#join-form").submit((event) => {
       .then((result) => {
         return result.user.updateProfile({
           displayName: name,
+        });
+      })
+      .then(() => {
+        return db.collection("profiles").add({
+          description: description,
+          displayName: name,
+          email: email,
+          uid: firebase.auth().currentUser.uid,
         });
       })
       .then(() => {

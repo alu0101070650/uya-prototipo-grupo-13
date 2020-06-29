@@ -62,11 +62,7 @@ function getDateFromTimestamp(timestamp) {
   return `${day}/${month}/${year}`;
 }
 
-function advertIsFromCurrentUser(uid) {
-  return firebase.auth().currentUser.uid === uid;
-}
-
-function advertIsAccepted(uid) {
+function isCurrentUser(uid) {
   return firebase.auth().currentUser.uid === uid;
 }
 
@@ -81,7 +77,7 @@ function renderAdvert(data, docId) {
           <div class="advrt-user-info-data">
             <span aria-label="nombre del usuario creador del anuncio">${
               data.userName
-            }${advertIsFromCurrentUser(data.userId) ? " (Tú)" : ""}</span>
+            }${isCurrentUser(data.userId) ? " (Tú)" : ""}</span>
             <span aria-label="zona geográfica">${data.city}</span>
             <span aria-label="fecha de creación del anuncio">${getDateFromTimestamp(
               data.creationDate
@@ -95,9 +91,9 @@ function renderAdvert(data, docId) {
 
         <div class="col s12 advrt-buttons">
           ${
-            advertIsFromCurrentUser(data.userId)
+            isCurrentUser(data.userId)
               ? `<a href="#" onclick="deleteAdvert('${docId}')" class="btn waves-effect waves-light black-text"><i class="material-icons left">delete</i>Borrar anuncio</a>`
-              : advertIsAccepted(data.acceptedBy)
+              : isCurrentUser(data.acceptedBy)
               ? `<a href="#" onclick="cancelFavor('${docId}')" class="btn waves-effect waves-light black-text"><i class="material-icons left">clear</i>Cancelar favor</a>`
               : `<a href="#" onclick="acceptAdvert('${docId}')" class="btn waves-effect waves-light red">Me interesa</a>`
           }

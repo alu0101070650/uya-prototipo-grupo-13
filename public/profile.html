@@ -35,7 +35,8 @@
         <li><a href="#" onclick="goToAcceptedFavors()" tabindex="0">Favores aceptados</a></li>
         <li><a href="#" onclick="goToTrustGroups()" tabindex="0">Grupos de confianza</a></li>
         <li class="active"><a href="#" tabindex="0"><i class="material-icons left">account_circle</i>Mi perfil</a></li>
-        <li><a href="#" onclick="logout()" tabindex="0"><i class="material-icons left">exit_to_app</i>Cerrar sesión</a></li>
+        <li><a href="#" onclick="logout()" tabindex="0"><i class="material-icons left">exit_to_app</i>Cerrar sesión</a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -51,7 +52,7 @@
     <div class="container">
 
       <div class="profile-header">
-        <h1>Mi perfil</h1>
+        <h1 class="profile-header-content">Cargando perfil...</h1>
       </div>
 
       <hr class="profile-header-hr red-text" />
@@ -72,21 +73,87 @@
         </div>
       </div>
 
-      <div class="profile-image"></div>
+      <div class="profile hidden">
+        <div class="profile-image"></div>
 
-      <div class="profile-name"></div>
+        <div class="profile-name"></div>
 
-      <div class="feedback-loading hidden">
-        <div class="preloader-wrapper big active">
-          <div class="spinner-layer spinner-red-only">
-            <div class="circle-clipper left">
-              <div class="circle"></div>
+        <div class="row">
+          <div class="col center s12 m6 profile-section">
+            <div class="profile-section-header">
+              <h2>Descripción</h2>
+              <hr class="red-text" />
             </div>
-            <div class="gap-patch">
-              <div class="circle"></div>
+            <div class="profile-section-content profile-description"></div>
+          </div>
+
+          <div class="col center s12 m6 profile-section">
+            <div class="profile-section-header">
+              <h2>Crédito social</h2>
+              <hr class="red-text" />
             </div>
-            <div class="circle-clipper right">
-              <div class="circle"></div>
+            <div class="profile-section-content">
+              <div class="card social-credit-card">
+                <div class="card-content">
+                  <p>+15 hours</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col center s12 profile-section">
+            <div class="profile-section-header">
+              <h2 class="reviews-header">Reseñas</h2>
+              <hr class="red-text" />
+            </div>
+            <div class="profile-section-content reviews-list"></div>
+          </div>
+
+          <div class="col s12 profile-section review-form">
+            <div class="card">
+              <div class="card-content">
+                <form id="publish-review" class="col s12">
+                  <div class="row center">
+                    <div class="col s12">
+                      <div class="feedback mb-30" role="alert" aria-atomic="true" aria-hidden="true"></div>
+                    </div>
+                    <div class="input-field col s12">
+                      <i class="material-icons prefix select-icon">star</i>
+                      <select id="stars" class="black-text">
+                        <option value="1">1 Estrella</option>
+                        <option value="2">2 Estrellas</option>
+                        <option value="3">3 Estrellas</option>
+                        <option value="4">4 Estrellas</option>
+                        <option value="5">5 Estrellas</option>
+                      </select>
+                      <label for="stars">Puntuación</label>
+                    </div>
+                    <div class="input-field col s12">
+                      <i class="material-icons prefix">mode_edit</i>
+                      <textarea id="review" class="materialize-textarea" data-length="420"></textarea>
+                      <label for="review">Reseña</label>
+                    </div>
+                    <div class="col s12 mt-50">
+                      <div id="submit">
+                        <input class="btn black-text" type="submit" value="Publicar reseña" tabindex="0" aria-live />
+                      </div>
+                      <div class="spinner preloader-wrapper active hidden">
+                        <div class="spinner-layer spinner-red-only">
+                          <div class="circle-clipper left">
+                            <div class="circle"></div>
+                          </div>
+                          <div class="gap-patch">
+                            <div class="circle"></div>
+                          </div>
+                          <div class="circle-clipper right">
+                            <div class="circle"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>

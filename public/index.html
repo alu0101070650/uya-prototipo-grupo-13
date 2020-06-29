@@ -18,7 +18,9 @@
   <script defer src="js/materialize.min.js"></script>
   <script defer src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
   <script defer src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
   <script defer src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
   <script defer src="js/main.js"></script>
   <script defer src="js/index.js"></script>
 </head>
@@ -36,9 +38,10 @@
           <li><a href="#testimonies" tabindex="0">Testimonios</a></li>
           <li><a href="#about-us" tabindex="0">Sobre nosotros</a></li>
           <li><a href="#join-us" tabindex="0">Únete</a></li>
-          <li><a href="login" tabindex="0"><i class="material-icons left" aria-hidden="true">account_circle</i>Inicia sesión</a></li>
+          <li><a href="login" tabindex="0"><i class="material-icons left" aria-hidden="true">account_circle</i>Inicia
+              sesión</a></li>
         </ul>
-      
+
         <ul id="nav-mobile" class="sidenav" aria-hidden="true">
           <li><a href="#home" tabindex="-1">Inicio</a></li>
           <li><a href="#features" tabindex="-1">Características</a></li>
@@ -47,7 +50,8 @@
           <li><a href="#join-us" tabindex="-1">Únete</a></li>
           <li><a href="login" tabindex="-1"><i class="material-icons left">account_circle</i>Inicia sesión</a></li>
         </ul>
-        <a href="#" data-target="nav-mobile" class="sidenav-trigger" aria-hidden="true"><i class="material-icons">menu</i></a>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger" aria-hidden="true"><i
+            class="material-icons">menu</i></a>
       </div>
     </nav>
   </div>
@@ -78,7 +82,8 @@
         <div class="row">
           <div class="col s12 center">
             <h4 tabindex="0">¿Qué es un Banco de Tiempo?</h4>
-            <p class="light" tabindex="0">Un <em>Banco de Tiempo</em> es una herramienta con la cual un grupo de personas
+            <p class="light" tabindex="0">Un <em>Banco de Tiempo</em> es una herramienta con la cual un grupo de
+              personas
               puede crear
               una alternativa
               económica social, en ella se intercambian habilidades entre los miembros sin utilizar dinero, únicamente
@@ -158,7 +163,7 @@
                     <h3 tabindex="0" aria-label="testimonio de Juan Garcia">Juan García</h3>
                     <h5 tabindex="0">Profesor de natación</h5>
                     <cite class="light" tabindex="0">Excelente comunidad, me ha salvado de algunos aprietos en el
-                      último momento. 
+                      último momento.
                     </cite>
                   </div>
                 </div>
@@ -196,9 +201,11 @@
 
             <div class="carousel-buttons carousel-fixed-item center">
               <button class="btn red waves-effect prev" aria-controls="testimonies-carousel"
-                aria-label="diapositiva anterior"><i class="material-icons left">keyboard_arrow_left</i>Anterior</button>
+                aria-label="diapositiva anterior"><i
+                  class="material-icons left">keyboard_arrow_left</i>Anterior</button>
               <button class="btn red waves-effect next" aria-controls="testimonies-carousel"
-                aria-label="diapositiva siguiente"><i class="material-icons right">keyboard_arrow_right</i>Siguiente</button>
+                aria-label="diapositiva siguiente"><i
+                  class="material-icons right">keyboard_arrow_right</i>Siguiente</button>
             </div>
           </div>
 
@@ -218,14 +225,14 @@
             <h3 class="section-header" tabindex="0">Sobre nosotros</h3>
             <p class="light" tabindex="0">
               Somos un grupo de estudiantes de informática que iniciamos este proyecto tras haberlo planteado
-              un día en clase. Nuestro objetivo era crear una comunidad entre los estudiantes de la universidad para 
-              facilitarnos la vida en labores cotidianas, como por ejemplo, compartir coche algún fin de semana o 
-              incluso para recibir algunas clases particulares. 
+              un día en clase. Nuestro objetivo era crear una comunidad entre los estudiantes de la universidad para
+              facilitarnos la vida en labores cotidianas, como por ejemplo, compartir coche algún fin de semana o
+              incluso para recibir algunas clases particulares.
             </p>
 
             <p class="light" tabindex="0">
-              Tras ver que la idea tenía buena aceptación decidimos hacer un banco de tiempo donde pudiese 
-              participar cualquiera. Así hemos ido adaptando nuestro Banco de Tiempo para que personas de todas 
+              Tras ver que la idea tenía buena aceptación decidimos hacer un banco de tiempo donde pudiese
+              participar cualquiera. Así hemos ido adaptando nuestro Banco de Tiempo para que personas de todas
               partes de España puedan recibir y dar favores en sus entornos más cercanos.
             </p>
           </div>
@@ -259,6 +266,12 @@
                 <label for="email">Correo electrónico</label>
               </div>
 
+              <div class="input-field col s12">
+                <i class="material-icons prefix">mode_edit</i>
+                <textarea id="description" class="materialize-textarea white-text" tabindex="0" data-length="420"></textarea>
+                <label for="description">Descripción personal</label>
+              </div>
+
               <div class="input-field col s12 m6">
                 <i class="material-icons prefix">lock</i>
                 <input id="password" type="password" class="white-text" tabindex="0" aria-required="true">
@@ -273,7 +286,7 @@
 
               <div class="col s12">
                 <label for="terms">
-                  <input type="checkbox" class="white" tabindex="0" id="terms" aria-required="true"  tabindex="0"/>
+                  <input type="checkbox" class="white" tabindex="0" id="terms" aria-required="true" tabindex="0" />
                   <span>Acepto los términos y condiciones de uso</span>
                 </label>
               </div>
