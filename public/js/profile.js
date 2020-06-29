@@ -63,6 +63,13 @@ function renderReview(data) {
 function loadProfile(user) {
   loadReviews();
 
+  const profileTabs = $(".profile-tab");
+  if (isCurrentUser(user.uid)) {
+    profileTabs.each((index, element) => {
+      $(element).addClass("active");
+    });
+  }
+
   const reviewFormContainer = $(".review-form");
   const profileHeaderContent = $(".profile-header-content");
   const profileContainer = $(".profile");
@@ -70,7 +77,7 @@ function loadProfile(user) {
 
   const profileImageContainer = $(".profile-image");
   profileImageContainer.append(
-    `<img src="${getGravatarImage(user.email)}"></img>`
+    `<img src="${getGravatarImage(user.email)}" alt="avatar del usuario"></img>`
   );
 
   const profileNameContainer = $(".profile-name");

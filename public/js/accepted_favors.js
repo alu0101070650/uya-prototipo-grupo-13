@@ -37,6 +37,7 @@ db.collection("adverts").onSnapshot((querySnapshot) => {
           content: doc.data().content,
           acceptedBy: doc.data().acceptedBy,
           city: doc.data().city,
+          group: doc.data().group,
         },
         doc.id
       );
