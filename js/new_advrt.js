@@ -6,9 +6,7 @@ firebase.auth().onAuthStateChanged((user) => {
   }
 });
 
-$(document).ready(() => {
-  $("input#input_text, textarea#content").characterCounter();
-});
+$("input#input_text, textarea#content").characterCounter();
 
 // New advert form
 $("#new-advrt").submit((event) => {
