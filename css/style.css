@@ -8,6 +8,55 @@ body {
 
 main {
   flex: 1 0 auto;
+  margin-bottom: 30px;
+}
+
+main a {
+  text-decoration: underline;
+  color: #107aad;
+}
+
+a.link {
+  text-decoration: underline;
+}
+
+a.skip-main {
+  left: -999px;
+  position: absolute;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -999;
+}
+
+a.skip-main:focus,
+a.skip-main:active {
+  background: white;
+  color: #107aad;
+  left: 0;
+  top: 0;
+  width: auto;
+  height: auto;
+  overflow: auto;
+  margin: 10px;
+  padding: 5px;
+  font-size: 1.4em;
+  z-index: 999;
+}
+
+.footer-copyright {
+  color: white !important;
+}
+
+.btn:focus,
+.btn-large:focus {
+  outline: 2px dotted;
+}
+
+.btn.red:focus,
+.btn-large.red:focus {
+  outline-color: black;
 }
 
 .mt-10 {
@@ -63,6 +112,7 @@ main {
 .advrt-user-info {
   display: flex;
   margin-bottom: 50px;
+  flex-wrap: wrap;
 }
 
 .advrt-user-info-avatar {
@@ -76,11 +126,18 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-grow: 1;
+  min-width: 170px;
 }
 
 .advrt-user-info-data span:nth-child(3) {
-  color: gray;
+  color: #6e6e6e;
   font-size: 0.9em;
+}
+
+.advrt-group {
+  display: flex;
+  align-items: flex-start;
 }
 
 .advrt-content {
@@ -101,4 +158,16 @@ main {
 
 .select-icon {
   left: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .advrt-group {
+    margin-left: 80px;
+  }
+}
+
+@media only screen and (max-width: 353px) {
+  .advrt-group {
+    margin-left: 0;
+  }
 }

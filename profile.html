@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5.0" />
   <title>Banco de Tiempo: Perfil</title>
 
   <!-- CSS -->
@@ -26,6 +26,8 @@
 </head>
 
 <body>
+  <a class="skip-main" href="#main-content">Saltar al contenido principal</a>
+  <a class="skip-main" href="#footer">Saltar al pie de página</a>
 
   <nav class="red" role="navigation">
     <div class="nav-wrapper">
@@ -34,21 +36,21 @@
         <li><a href="#" onclick="goToDashboard()" tabindex="0">Tablón de anuncios</a></li>
         <li><a href="#" onclick="goToAcceptedFavors()" tabindex="0">Favores aceptados</a></li>
         <li><a href="#" onclick="goToTrustGroups()" tabindex="0">Grupos de confianza</a></li>
-        <li class="active"><a href="#" tabindex="0"><i class="material-icons left">account_circle</i>Mi perfil</a></li>
+        <li class="profile-tab"><a href="#" onclick="goToProfile()" tabindex="0"><i class="material-icons left">account_circle</i>Mi perfil</a></li>
         <li><a href="#" onclick="logout()" tabindex="0"><i class="material-icons left">exit_to_app</i>Cerrar sesión</a>
         </li>
       </ul>
     </div>
   </nav>
   <ul id="nav-mobile" class="sidenav">
-    <li><a href="#" onclick="goToDashboard()" tabindex="0">Tablón de anuncios</a></li>
-    <li><a href="#" onclick="goToAcceptedFavors()" tabindex="0">Favores aceptados</a></li>
-    <li><a href="#" onclick="goToTrustGroups()" tabindex="0">Grupos de confianza</a></li>
-    <li class="active"><a href="#" tabindex="0"><i class="material-icons left">account_circle</i>Mi perfil</a></li>
-    <li><a href="#" onclick="logout()"><i class="material-icons left">exit_to_app</i>Cerrar sesión</a></li>
+    <li><a href="#" onclick="goToDashboard()" tabindex="-1">Tablón de anuncios</a></li>
+    <li><a href="#" onclick="goToAcceptedFavors()" tabindex="-1">Favores aceptados</a></li>
+    <li><a href="#" onclick="goToTrustGroups()" tabindex="-1">Grupos de confianza</a></li>
+    <li class="profile-tab"><a href="#" onclick="goToProfile()" tabindex="-1"><i class="material-icons left">account_circle</i>Mi perfil</a></li>
+    <li><a href="#" onclick="logout()" tabindex="-1"><i class="material-icons left">exit_to_app</i>Cerrar sesión</a></li>
   </ul>
 
-  <main>
+  <main id="main-content">
     <div class="container">
 
       <div class="profile-header">
@@ -95,7 +97,7 @@
             <div class="profile-section-content">
               <div class="card social-credit-card">
                 <div class="card-content">
-                  <p>+15 hours</p>
+                  <p>+15 horas</p>
                 </div>
               </div>
             </div>
@@ -135,7 +137,7 @@
                     </div>
                     <div class="col s12 mt-50">
                       <div id="submit">
-                        <input class="btn black-text" type="submit" value="Publicar reseña" tabindex="0" aria-live />
+                        <input class="btn black-text" type="submit" value="Publicar reseña" tabindex="0" />
                       </div>
                       <div class="spinner preloader-wrapper active hidden">
                         <div class="spinner-layer spinner-red-only">
@@ -161,7 +163,7 @@
     </div>
   </main>
 
-  <footer class="page-footer red">
+  <footer id="footer" class="page-footer red">
     <div class="container">
       <div class="row center">
 
@@ -202,7 +204,7 @@
     </div>
     <div class="footer-copyright">
       <div class="container">
-        Hecho usando <a class="red-text text-lighten-3" href="http://materializecss.com" tabindex="0">Materialize</a>
+        Hecho usando <a class="white-text link" href="http://materializecss.com" tabindex="0">Materialize</a>
       </div>
     </div>
   </footer>

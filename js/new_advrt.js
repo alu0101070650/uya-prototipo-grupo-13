@@ -28,15 +28,22 @@ $("#new-advrt").submit((event) => {
 
   const content = $("#new-advrt #content");
   const city = $("#new-advrt #city");
+  const group = $("#new-advrt #group");
   const submitButton = $("#new-advrt #submit");
   const loadingSpinner = $("#new-advrt .spinner");
 
   if (content.val() === "") {
-    addFeedbackMessage("Por favor escriba el contenido del anuncio.");
+    addFeedbackMessage("Por favor, introduzca el contenido del anuncio.");
   }
 
   if (city.val() === "") {
-    addFeedbackMessage("Por favor seleccione una zona geográfica.");
+    addFeedbackMessage("Por favor, seleccione una zona geográfica.");
+  }
+
+  if (group.val() === "") {
+    addFeedbackMessage(
+      "Por favor, seleccione el grupo donde quiere publicar el anuncio."
+    );
   }
 
   if (hasFeedback) {
@@ -53,6 +60,7 @@ $("#new-advrt").submit((event) => {
         userName: firebase.auth().currentUser.displayName,
         acceptedBy: "",
         city: city.val(),
+        group: group.val(),
       })
       .then(() => {
         M.toast({

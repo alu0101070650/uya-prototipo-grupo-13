@@ -1,22 +1,16 @@
-.advrt-header {
+.trust-groups-header {
   display: flex;
   align-items: flex-end;
   margin-top: 50px;
-  flex-wrap: wrap;
 }
 
-.advrt-header h1 {
+.trust-groups-header h1 {
   display: inline-block;
   font-size: 4em;
   flex-grow: 1;
   margin: 0;
 }
 
-.advrt-header-hr {
+.trust-groups-header-hr {
   margin-bottom: 25px;
-}
-
-.advrt-list-loading {
-  display: flex;
-  justify-content: center;
 }

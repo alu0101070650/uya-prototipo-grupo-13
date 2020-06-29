@@ -63,6 +63,7 @@ function getDateFromTimestamp(timestamp) {
 }
 
 function isCurrentUser(uid) {
+  if (!firebase.auth().currentUser) return false;
   return firebase.auth().currentUser.uid === uid;
 }
 
@@ -75,13 +76,17 @@ function renderAdvert(data, docId) {
             data.userEmail
           )}">
           <div class="advrt-user-info-data">
-            <span aria-label="nombre del usuario creador del anuncio">${
+            <span aria-label="nombre del usuario creador del anuncio"><a href="#" onclick="goToProfile('${data.userId}')">${
               data.userName
-            }${isCurrentUser(data.userId) ? " (Tú)" : ""}</span>
+            }</a>${isCurrentUser(data.userId) ? " (Tú)" : ""}</span>
             <span aria-label="zona geográfica">${data.city}</span>
             <span aria-label="fecha de creación del anuncio">${getDateFromTimestamp(
               data.creationDate
             )}</span>
+          </div>
+          <div class="advrt-group">
+            <i class="material-icons left">group</i>
+            <p>${data.group}</p>
           </div>
         </div>
 
@@ -138,10 +143,12 @@ function goToTrustGroups() {
   }
 }
 
-function goToProfile() {
+function goToProfile(uid) {
   if (window.location.pathname.startsWith("/uya-prototipo-grupo-13")) {
-    window.location.href = "/uya-prototipo-grupo-13/profile";
+    window.location.href = `/uya-prototipo-grupo-13/profile${
+      uid ? `?uid=${uid}` : ""
+    }`;
   } else {
-    window.location.href = "/profile";
+    window.location.href = `/profile${uid ? `?uid=${uid}` : ""}`;
   }
 }
