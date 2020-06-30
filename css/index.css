@@ -96,6 +96,10 @@ a.anchor.no-top {
   font-size: 1.2em;
 }
 
+.search-form {
+  display: inline-block;
+}
+
 @media only screen and (max-width: 992px) {
   #index-banner .section {
     top: 10%;
