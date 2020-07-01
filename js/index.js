@@ -1,5 +1,14 @@
 const db = firebase.firestore();
 
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    $(".account-tab").each((index, element) => {
+      $(element)
+        .html(`<a href="profile" tabindex="0"><i class="material-icons left" aria-hidden="true">account_circle</i>Mi perfil</a>`);
+    });
+  }
+});
+
 $("input#input_text, textarea#description").characterCounter();
 
 // Join/register form
