@@ -150,6 +150,21 @@ a.skip-main:active {
   margin-top: 50px;
 }
 
+.feedback[aria-hidden="false"] {
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.feedback {
+  background-color: #c94042;
+  color: white;
+}
+
+.red .feedback {
+  background-color: white;
+  color: black;
+}
+
 .feedback-loading {
   display: flex;
   justify-content: center;
